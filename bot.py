@@ -1,4 +1,5 @@
 import telebot
+import os
 from telebot import types
 import sqlite3
 from datetime import datetime, timedelta
@@ -11,7 +12,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Токен бота
-TOKEN = "8019144525:AAHxClNncAGcter-fraGjZz3B_i-NjQOBP8"
+TOKEN = os.getenv("TOKEN")
 bot = telebot.TeleBot(TOKEN)
 
 # Подключение к базе данных SQLite
